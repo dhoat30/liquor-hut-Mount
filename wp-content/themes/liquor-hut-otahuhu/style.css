@@ -6,6 +6,8 @@
     version: 1.1
 */
 
+@import 'css/home-page.css';
+
 @import 'css/all.min.css';
 @import 'css/animate.css';
 @import 'css/flaticon.css';
