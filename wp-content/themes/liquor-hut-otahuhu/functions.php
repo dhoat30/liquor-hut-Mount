@@ -1,10 +1,10 @@
 <?php 
 /**
- * Inspiry functions and definitions
+ * liquorHut functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package inspiry
+ * @package liquorHut
 
  */
 require get_theme_file_path('/inc/buddypress-design-boards.php');
@@ -17,20 +17,23 @@ require get_theme_file_path('/inc/nav-registeration.php');
 
  //enqueue scripts
 
- function inspiry_scripts(){ 
+ function liquorHut_scripts(){ 
    wp_enqueue_script("jquery");
   // wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/f3cb7ab01f.js', NULL, '1.0', false);
    wp_enqueue_style("google-fonts", "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap", false);
    wp_enqueue_style("google-fonts2", "https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap", false);
-
+   ;
    if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
       wp_enqueue_script('main', 'http://localhost:3000/bundled.js',  NULL, '1.0', true);
+      wp_enqueue_script('popper', get_theme_file_uri('/assets/js/popper.min.js'),  NULL, '1.0', true);
+
+
     } else {
       wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/undefined'),  NULL, '1.0', true);
-      wp_enqueue_script('main', get_theme_file_uri('/bundled-assets/scripts.8da41a06380842c1910a.js'), NULL, '1.0', true);
-      wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.8da41a06380842c1910a.css'));
+      wp_enqueue_script('main', get_theme_file_uri('/bundled-assets/scripts.7cd2606c3cd09a84a5e0.js'), NULL, '1.0', true);
+      wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.7cd2606c3cd09a84a5e0.css'));
     }
-    wp_localize_script("main", "inspiryData", array(
+    wp_localize_script("main", "liquorHutData", array(
       "root_url" => get_site_url(),
       "nonce" => wp_create_nonce("wp_rest")
     ));
@@ -38,7 +41,7 @@ require get_theme_file_path('/inc/nav-registeration.php');
 
   
 }
-add_action( "wp_enqueue_scripts", "inspiry_scripts" ); 
+add_action( "wp_enqueue_scripts", "liquorHut_scripts" ); 
 
 
 
@@ -126,63 +129,3 @@ function fwp_home_custom_query( $query ) {
 }
 add_filter( 'pre_get_posts', 'fwp_home_custom_query' );
 
-//navbar
-class CSS_Menu_Walker extends Walker {
-
-	var $db_fields = array('parent' => 'menu_item_parent', 'id' => 'db_id');
-	
-	function start_lvl(&$output, $depth = 0, $args = array()) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul>\n";
-	}
-	
-	function end_lvl(&$output, $depth = 0, $args = array()) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "$indent</ul>\n";
-	}
-	
-	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-	
-		global $wp_query;
-		$indent = ($depth) ? str_repeat("\t", $depth) : '';
-		$class_names = $value = '';
-		$classes = empty($item->classes) ? array() : (array) $item->classes;
-		
-		/* Add active class */
-		if (in_array('current-menu-item', $classes)) {
-			$classes[] = 'active';
-			unset($classes['current-menu-item']);
-		}
-		
-		/* Check for children */
-		$children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
-		if (!empty($children)) {
-			$classes[] = 'has-sub';
-		}
-		
-		$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
-		$class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-		
-		$id = apply_filters('nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args);
-		$id = $id ? ' id="' . esc_attr($id) . '"' : '';
-		
-		$output .= $indent . '<li' . $id . $value . $class_names .'>';
-		
-		$attributes  = ! empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) .'"' : '';
-		$attributes .= ! empty($item->target)     ? ' target="' . esc_attr($item->target    ) .'"' : '';
-		$attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn       ) .'"' : '';
-		$attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url       ) .'"' : '';
-		
-		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'><span>';
-		$item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-		$item_output .= '</span></a>';
-		$item_output .= $args->after;
-		
-		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-	}
-	
-	function end_el(&$output, $item, $depth = 0, $args = array()) {
-		$output .= "</li>\n";
-	}
-}

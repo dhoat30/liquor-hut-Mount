@@ -15,7 +15,7 @@ function register_custom_type2(){
 
    //sliders psot type
    register_post_type("sliders", array(
-      "supports" => array("title", "page-attributes", 'editor'), 
+      "supports" => array("title", "page-attributes"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,
@@ -26,9 +26,7 @@ function register_custom_type2(){
          "all_items" => "All Sliders", 
          "singular_name" => "Slider"
       ), 
-      "menu_icon" => "dashicons-slides",
-      'taxonomies'          => array('category')
-   )
+      "menu_icon" => "dashicons-slides"   )
    ); 
 
    //loving post type
@@ -117,8 +115,15 @@ function wpdocs_register_private_taxonomy() {
        'rewrite'      => true,
        'hierarchical' => true
    );
+   $argsSlider = array(
+      'label'        => __( 'hero-section-slider', 'textdomain' ),
+      'public'       => true,
+      'rewrite'      => true,
+      'hierarchical' => true
+  );
     
    register_taxonomy( 'favorite', 'shop-my-fav', $args );
+   register_taxonomy( 'hero-section-slider', 'sliders', $argsSlider );
 }
 add_action( 'init', 'wpdocs_register_private_taxonomy', 0 );
 

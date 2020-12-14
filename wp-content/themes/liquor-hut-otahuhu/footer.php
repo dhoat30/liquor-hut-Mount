@@ -173,33 +173,33 @@
 --> 
 
   <!-- Latest jQuery --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/jquery-1.12.4.min.js"></script> 
+  <script src="<?php echo get_theme_file_uri('/assets/js/jquery-1.12.4.min.js'); ?>"></script> 
   <!-- popper min js -->
   
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/popper.min.js"></script>
+  <script src="<?php echo get_theme_file_uri('/assets/js/popper.min.js'); ?>"></script>
   <!-- Latest compiled and minified Bootstrap --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/bootstrap/js/bootstrap.min.js"></script> 
+  <script src="<?php echo get_theme_file_uri('/assets/bootstrap/js/bootstrap.min.js'); ?>"></script> 
   <!-- owl-carousel min js  --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/owlcarousel/js/owl.carousel.min.js"></script> 
+  <script src="<?php echo get_theme_file_uri('/assets/owlcarousel/js/owl.carousel.min.js'); ?>"></script> 
   <!-- magnific-popup min js  --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/magnific-popup.min.js"></script> 
+  <script src="<?php echo get_theme_file_uri('/assets/js/magnific-popup.min.js'); ?>"></script> 
   <!-- waypoints min js  --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/waypoints.min.js"></script> 
+  <script src="<?php echo get_theme_file_uri('/assets/js/waypoints.min.js'); ?>"></script> 
   <!-- parallax js  --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/parallax.js"></script> 
+  <script src="<?php echo get_theme_file_uri('/assets/js/parallax.js'); ?>"></script> 
   <!-- countdown js  --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/jquery.countdown.min.js"></script> 
+  <script src="<?php echo get_theme_file_uri('/assets/js/jquery.countdown.min.js'); ?>"></script> 
   <!-- imagesloaded js --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="<?php echo get_theme_file_uri('/assets/js/imagesloaded.pkgd.min.js'); ?>"></script>
   <!-- isotope min js --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/isotope.min.js"></script>
+  <script src="<?php echo get_theme_file_uri('/assets/js/isotope.min.js'); ?>"></script>
   <!-- jquery.dd.min js -->
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/jquery.dd.min.js"></script>
+  <script src="<?php echo get_theme_file_uri('/assets/js/jquery.dd.min.js'); ?>"></script>
   <!-- slick js -->
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/slick.min.js"></script>
+  <script src="<?php echo get_theme_file_uri('/assets/js/slick.min.js'); ?>"></script>
   <!-- elevatezoom js -->
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/jquery.elevatezoom.js"></script>
+  <script src="<?php echo get_theme_file_uri('/assets/js/jquery.elevatezoom.js'); ?>"></script>
   <!-- scripts js --> 
-  <script src="<?php echo get_theme_file_uri(); ?>/assets/js/scripts.js"></script>
+  <script src="<?php echo get_theme_file_uri('/assets/js/scripts.js'); ?>"></script>
 </body>
 </html>
