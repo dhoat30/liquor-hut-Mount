@@ -1,0 +1,38 @@
+/*
+    Theme Name: Liquor Hut Otahuhu
+    Theme URI: https://webduel.co.nz
+    Author: Gurpreet Dhoat
+    Description: customized theme
+    version: 1.1
+*/
+
+@import 'css/all.min.css';
+@import 'css/animate.css';
+@import 'css/flaticon.css';
+@import 'css/ionicons.min.css';
+@import 'css/jquery-ui.css';
+@import 'css/linearicons.css';
+@import 'css/magnific-popup.css';
+@import 'css/responsive.css';
+@import 'css/simple-line-icons.css';
+@import 'css/slick-theme.css';
+@import 'css/slick.css';
+@import 'css/style.css';
+@import 'css/themify-icons.css';
+
+@import 'bootstrap/css/bootstrap.min.css';
+
+@import 'css/owlcarousel/css/owl.carousel.min.css';
+@import 'css/owlcarousel/css/owl.theme.css';
+@import 'css/owlcarousel/css/owl.theme.default.min.css';
+
+
+* {
+    box-sizing: border-box;
+    padding: 0; 
+    margin: 0;
+    color:#3F3F3F;
+    font-family: 'Playfair Display', serif;
+  }
+
+  
