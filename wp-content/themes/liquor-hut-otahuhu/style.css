@@ -7,6 +7,7 @@
 */
 
 @import 'css/home-page.css';
+@import 'css/slider.css';
 
 @import 'css/all.min.css';
 @import 'css/animate.css';
@@ -22,7 +23,7 @@
 @import 'css/style.css';
 @import 'css/themify-icons.css';
 
-@import 'bootstrap/css/bootstrap.min.css';
+@import 'assets/bootstrap/css/bootstrap.min.css';
 
 @import 'css/owlcarousel/css/owl.carousel.min.css';
 @import 'css/owlcarousel/css/owl.theme.css';
@@ -36,5 +37,14 @@
     color:#3F3F3F;
     font-family: 'Playfair Display', serif;
   }
-
+  .white{ 
+    color: white;
+}
+.black{
+    color: black;
+}
   
+.btn{
+    background: black;
+    padding: 5px 20px;
+}

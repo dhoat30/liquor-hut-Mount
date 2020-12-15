@@ -25,13 +25,12 @@ require get_theme_file_path('/inc/nav-registeration.php');
    ;
    if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
       wp_enqueue_script('main', 'http://localhost:3000/bundled.js',  NULL, '1.0', true);
-      wp_enqueue_script('popper', get_theme_file_uri('/assets/js/popper.min.js'),  NULL, '1.0', true);
 
 
     } else {
       wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/undefined'),  NULL, '1.0', true);
-      wp_enqueue_script('main', get_theme_file_uri('/bundled-assets/scripts.7cd2606c3cd09a84a5e0.js'), NULL, '1.0', true);
-      wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.7cd2606c3cd09a84a5e0.css'));
+      wp_enqueue_script('main', get_theme_file_uri('/bundled-assets/scripts.2587d1c4d0e6e13eb997.js'), NULL, '1.0', true);
+      wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.2587d1c4d0e6e13eb997.css'));
     }
     wp_localize_script("main", "liquorHutData", array(
       "root_url" => get_site_url(),

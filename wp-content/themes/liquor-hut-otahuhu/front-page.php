@@ -7,60 +7,418 @@ get_header();
 
          
 <!-- START SECTION BANNER -->
-<div class="banner_section slide_medium shop_banner_slider staggered-animation-wrap">
-    <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow" data-ride="carousel">
-        <div class="carousel-inner">
-        <?php 
-        $argsSlider = array(
-            'post_type' => 'sliders',
-            'posts_per_page' => -1,
-            'post_status' => 'publish',
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'hero-section-slider',
-                    'field'    => 'slug',
-                    'terms'    => array('hero section'),
-                )
-                ), 
-                'orderby' => 'date', 
-                'order' => 'ASC'
-        );
-        $slider = new WP_Query( $argsSlider );
-        while($slider->have_posts()){
-            $slider->the_post();
-            ?>
-            
-            
-            <div class="carousel-item background_bg active" data-img-src='<?php echo get_the_post_thumbnail_url(null, 'large');?>'>
-                <div class="banner_slide_content banner_content_inner">
-                	<div class="container">
-                    	<div class="row">
-                            <div class="col-lg-7 col-10">
-                                <div class="banner_content overflow-hidden">
-                                    <h2 class="staggered-animation" data-animation="slideInLeft" data-animation-delay="0.5s"><?php echo get_field('title');?></h2>
-                                    <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light" data-animation="slideInLeft" data-animation-delay="1s"><?php echo get_field('subtitle');?></h5>
-                                    <a class="btn btn-fill-out staggered-animation text-uppercase" href="<?php echo get_field('button_link');?>" data-animation="slideInLeft" data-animation-delay="1.5s"><?php echo get_field('button_text');?></a>
-                                </div>
-                            </div>
-                    	</div>
+<div class="slider-container">
+
+
+        <div class="slider">
+                        
+                            
+                                        <?php 
+
+                                                $argsSlider = array(
+                                                    'post_type' => 'sliders',
+                                                    'posts_per_page' => -1,
+                                                    'post_status' => 'publish',
+                                                    'tax_query' => array(
+                                                        array(
+                                                            'taxonomy' => 'hero-section-slider',
+                                                            'field'    => 'slug',
+                                                            'terms'    => array('hero section'),
+                                                        )
+                                                        ), 
+                                                        'orderby' => 'date', 
+                                                        'order' => 'ASC'
+                                                );
+                                                $slider = new WP_Query( $argsSlider );
+                                                while($slider->have_posts()){
+                                                    $slider->the_post();
+                                                    ?>
+                                           
+                                            <div class="slide"  style='background: url("<?php echo get_the_post_thumbnail_url(null,"full"); ?>") no-repeat;'>
+                                               
+                                                <div class="content">
+                                                    <div class="banner_content overflow-hidden">
+                                                        <!--<h2 class="staggered-animation" data-animation="slideInLeft" data-animation-delay="0.5s"><?php //echo get_field('title');?></h2>
+                                                        <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light" data-animation="slideInLeft" data-animation-delay="1s"><?php //echo get_field('subtitle');?></h5>
+                                                        -->
+                                                        <a data-animation-delay="1.5s" class='btn btn-black black' href="<?php echo get_field('button_link');?>" data-animation="slideInLeft" data-animation-delay="1.5s"><?php echo get_field('button_text');?></a>
+                                                    </div>
+                                                </div>
+                                                
+                                             </div>
+                                         
+
+                                            <?php
+
+                                       
+                                        }
+                                        wp_reset_postdata();
+
+                                        ?>
+                            
+                                
+                            
+        </div>
+                
+                    
+            <div class="buttons">
+                            <button id="prev"><i class="fas fa-arrow-left"></i></button>
+                            <button id="next"><i class="fas fa-arrow-right"></i></button>
+            </div>
+    </div>
+
+  
+
+        <!-- START SECTION SHOP -->
+<div class="section small_pb">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+            	<div class="heading_tab_header">
+                    <div class="heading_s2">
+                        <h2>Exclusive Products</h2>
+                    </div>
+                    <div class="tab-style2">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tabmenubar" aria-expanded="false"> 
+                            <span class="ion-android-menu"></span>
+                        </button>
+                        <ul class="nav nav-tabs ex-product-nav justify-content-center justify-content-md-end" id="tabmenubar" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="special-tab" data-toggle="tab" href="#special" role="tab" aria-controls="special" aria-selected="true">Special Offer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="sellers-tab" data-toggle="tab" href="#sellers" role="tab" aria-controls="sellers" aria-selected="false">Best Sellers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="featured-tab" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="false">Featured</a>
+                            </li>
+                            
+                        </ul>
                     </div>
                 </div>
             </div>
-           
-            
-            <?php
-        }
-?>
-           
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"><i class="ion-chevron-left"></i></a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"><i class="ion-chevron-right"></i></a>
+		</div>
+        <div class="row">
+        	<div class="col-12">
+                <div class="tab_slider">
+                	<div class="tab-pane fade show active" id="special" role="tabpanel" aria-labelledby="special-tab">
+                        <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1" data-loop="true" data-dots="false" data-nav="true" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
+                        <?php
+                            $args = array(
+                                'post_type' => 'product',
+                                'posts_per_page' => 8,
+                                'meta_query'     => array(
+                                    'relation' => 'OR',
+                                    array( // Simple products type
+                                        'key'           => '_sale_price',
+                                        'value'         => 0,
+                                        'compare'       => '>',
+                                        'type'          => 'numeric'
+                                    ))
+                                );
+                            $loop = new WP_Query( $args );
+                            if ( $loop->have_posts() ) {
+                                while ( $loop->have_posts() ) : $loop->the_post();
+                                global $product;
+                                $product = get_product( get_the_ID() ); 
+                                    //echo the_title();
+                                    //echo get_the_post_thumbnail_url();
+                                   // echo the_permalink();
+                                   // woocommerce_template_loop_add_to_cart(); 
+                                ?>
+                                <div class="item">
+                                <div class="product">
+                                    <div class="product_img">
+                                        <a href="shop-product-detail.html">
+                                            <?php echo $product->get_image();?>
+                                        </a>
+                                        
+                                        <div class="product_action_box">
+                                            <ul class="list_none pr_action_btn">
+                                                <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
+                                                <li><a href="<?php echo get_the_post_thumbnail_url(); ?>" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                                                <li><a href="#"><i class="icon-heart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product_info">
+                                        <h6 class="product_title"><a href="shop-product-detail.html"><?php the_title();?></a></h6>
+                                        <div class="product_price">
+                                            <?php 
+                                                if( $product->get_sale_price()){
+                                                    ?>
+                                                    <span class="price">$<?php echo $product->get_sale_price();?></span>
+                                                        <del>$<?php echo $product->get_regular_price(); ?></del>
+                                                        
+                                                    <?php
+                                                }
+                                                else{
+                                                    ?>
+                                                        <span class="price">$<?php echo $product->get_regular_price();?></span>
+
+                                                    <?php
+                                                }
+                                            ?>
+                                            
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                                <?php 
+
+                            
+
+                                endwhile;
+                                   
+                            } else {
+                                echo __( 'No products found' );
+                            }
+                            wp_reset_postdata();
+	                        ?>
+                           
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="sellers" role="tabpanel" aria-labelledby="sellers-tab">
+                        <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1" data-loop="true" data-dots="false" data-nav="true" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
+                        <?php
+                            $args = array(
+                                'post_type' => 'product',
+                                'posts_per_page' => 14,
+                                'tax_query' => array( array(
+                                    'taxonomy' => 'product_tag',
+                                    'field' => 'slug',
+                                    'terms' => 'best-sellers'
+                                )
+                                )
+                                );
+                            $loop = new WP_Query( $args );
+                            if ( $loop->have_posts() ) {
+                                while ( $loop->have_posts() ) : $loop->the_post();
+                                global $product;
+                                $product = get_product( get_the_ID() ); 
+                                    //echo the_title();
+                                    //echo get_the_post_thumbnail_url();
+                                   // echo the_permalink();
+                                   // woocommerce_template_loop_add_to_cart(); 
+                                ?>
+                                <div class="item">
+                                <div class="product">
+                                    <div class="product_img">
+                                        <a href="shop-product-detail.html">
+                                            <?php echo $product->get_image();?>
+                                        </a>
+                                        <div class="product_action_box">
+                                            <ul class="list_none pr_action_btn">
+                                                <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
+                                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                                                <li><a href="#"><i class="icon-heart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product_info">
+                                        <h6 class="product_title"><a href="shop-product-detail.html"><?php the_title();?></a></h6>
+                                        <div class="product_price">
+                                            <?php 
+                                                if( $product->get_sale_price()){
+                                                    ?>
+                                                    <span class="price">$<?php echo $product->get_sale_price();?></span>
+                                                        <del>$<?php echo $product->get_regular_price(); ?></del>
+                                                        
+                                                    <?php
+                                                }
+                                                else{
+                                                    ?>
+                                                        <span class="price">$<?php echo $product->get_regular_price();?></span>
+
+                                                    <?php
+                                                }
+                                            ?>
+                                            
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                                <?php 
+
+                            
+
+                                endwhile;
+                                   
+                            } else {
+                                echo __( 'No products found' );
+                            }
+                            wp_reset_postdata();
+	                        ?>
+                            
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="featured" role="tabpanel" aria-labelledby="featured-tab">
+                        <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1" data-loop="true" data-dots="false" data-nav="true" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
+                        <?php
+                            $args = array(
+                                'post_type' => 'product',
+                                'posts_per_page' => 14,
+                                'tax_query' => array( array(
+                                    'taxonomy' => 'product_tag',
+                                    'field' => 'slug',
+                                    'terms' => 'best-sellers'
+                                )
+                                )
+                                );
+                            $loop = new WP_Query( $args );
+                            if ( $loop->have_posts() ) {
+                                while ( $loop->have_posts() ) : $loop->the_post();
+                                global $product;
+                                $product = get_product( get_the_ID() ); 
+                                    //echo the_title();
+                                    //echo get_the_post_thumbnail_url();
+                                   // echo the_permalink();
+                                   // woocommerce_template_loop_add_to_cart(); 
+                                ?>
+                                <div class="item">
+                                <div class="product">
+                                    <div class="product_img">
+                                        <a href="shop-product-detail.html">
+                                            <?php echo $product->get_image();?>
+                                        </a>
+                                        <div class="product_action_box">
+                                            <ul class="list_none pr_action_btn">
+                                                <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
+                                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                                                <li><a href="#"><i class="icon-heart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product_info">
+                                        <h6 class="product_title"><a href="shop-product-detail.html"><?php the_title();?></a></h6>
+                                        <div class="product_price">
+                                            <?php 
+                                                if( $product->get_sale_price()){
+                                                    ?>
+                                                    <span class="price">$<?php echo $product->get_sale_price();?></span>
+                                                        <del>$<?php echo $product->get_regular_price(); ?></del>
+                                                        
+                                                    <?php
+                                                }
+                                                else{
+                                                    ?>
+                                                        <span class="price">$<?php echo $product->get_regular_price();?></span>
+
+                                                    <?php
+                                                }
+                                            ?>
+                                            
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                                <?php 
+
+                            
+
+                                endwhile;
+                                   
+                            } else {
+                                echo __( 'No products found' );
+                            }
+                            wp_reset_postdata();
+	                        ?>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> 
     </div>
 </div>
-                                       
+<!-- END SECTION SHOP -->
 
 
+<div class='map'>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3188.819228574254!2d174.83208405119674!3d-36.942486779821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4ec716998401%3A0xf71db5dbf04c8aa9!2sLIQUOR%20HUT%20OTAHUHU!5e0!3m2!1sen!2snz!4v1607991829784!5m2!1sen!2snz" width="100" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+            
+
+
+
+<script>
+        const slides = document.querySelectorAll('.slide');
+const next = document.querySelector('#next');
+const prev = document.querySelector('#prev');
+const auto = true; // Auto scroll
+const intervalTime = 5000;
+let slideInterval;
+slides[0].classList.add('current');
+
+const nextSlide = () => {
+  // Get current class
+  const current = document.querySelector('.current');
+  // Remove current class
+  current.classList.remove('current');
+  // Check for next slide
+  if (current.nextElementSibling) {
+    // Add current to next sibling
+    current.nextElementSibling.classList.add('current');
+  } else {
+    // Add current to start
+    slides[0].classList.add('current');
+  }
+  setTimeout(() => current.classList.remove('current'));
+};
+
+const prevSlide = () => {
+  // Get current class
+  const current = document.querySelector('.current');
+  // Remove current class
+  current.classList.remove('current');
+  // Check for prev slide
+  if (current.previousElementSibling) {
+    // Add current to prev sibling
+    current.previousElementSibling.classList.add('current');
+  } else {
+    // Add current to last
+    slides[slides.length - 1].classList.add('current');
+  }
+  setTimeout(() => current.classList.remove('current'));
+};
+
+// Button events
+next.addEventListener('click', e => {
+    console.log('clicked');
+  nextSlide();
+  if (auto) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+});
+
+prev.addEventListener('click', e => {
+  prevSlide();
+  if (auto) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+});
+
+// Auto slide
+if (auto) {
+  // Run next slide at interval time
+  slideInterval = setInterval(nextSlide, intervalTime);
+}
+
+    </script>
 <?php 
+
+
 
 get_footer(); 
 ?>

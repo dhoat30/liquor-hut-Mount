@@ -1,4 +1,16 @@
-
+.top-header {
+    padding: 5px 0 !important;
+    transition: all 0.5s ease-in-out;
+    background: #f7821f;
+}
+.header_list{
+    margin: 0 !important;
+}
+.header_list span, i, a{
+    color: white !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+}
 .bottom_header{ 
     background: black !important;
 }
@@ -18,3 +30,9 @@
     height: 500px;
 }
 
+.map iframe {
+    height: 360px !important;
+    width: 100%;
+    border: 0;
+    display: block;
+}
