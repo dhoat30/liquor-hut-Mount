@@ -91,7 +91,7 @@ get_header();
                     <div class="single_banner_info">
                         <h5 class="single_bn_title1"> </h5>
                         <h3 class="single_bn_title"><?php the_title();?></h3>
-                        <a href="shop-left-sidebar.html" class="single_bn_link">Explore Now</a>
+                        <a href="<?php echo get_field('link');?>" class="single_bn_link">Explore Now</a>
                     </div>
                 </div>
             </div>
