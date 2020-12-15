@@ -65,9 +65,46 @@ get_header();
                             <button id="prev"><i class="fas fa-arrow-left"></i></button>
                             <button id="next"><i class="fas fa-arrow-right"></i></button>
             </div>
-    </div>
+</div>
 
   
+<!-- START SECTION BANNER --> 
+<div class="section pb_20 small_pt">
+	<div class="container">
+    	<div class="row">
+                        <?php 
+
+                $argsCategory = array(
+                    'post_type' => 'product_categories',
+                    'posts_per_page' => -1,
+                    'post_status' => 'publish',
+                        'orderby' => 'date', 
+                        'order' => 'ASC'
+                );
+                $categoryCard = new WP_Query( $argsCategory );
+                while($categoryCard->have_posts()){
+                    $categoryCard->the_post();
+                    ?>
+        	<div class="col-md-6">
+            	<div class="single_banner">
+                	<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="shop_banner_img1">
+                    <div class="single_banner_info">
+                        <h5 class="single_bn_title1"> </h5>
+                        <h3 class="single_bn_title"><?php the_title();?></h3>
+                        <a href="shop-left-sidebar.html" class="single_bn_link">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+            <?php
+             }
+             wp_reset_postdata();
+
+            ?>
+           
+        </div>
+    </div>
+</div>
+<!-- END SECTION BANNER --> 
 
         <!-- START SECTION SHOP -->
 <div class="section small_pb">
@@ -135,7 +172,7 @@ get_header();
                                         
                                         <div class="product_action_box">
                                             <ul class="list_none pr_action_btn">
-                                                <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li class="add-to-cart"><a href="<?php the_permalink();?>"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
                                                 <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
                                                 <li><a href="<?php echo get_the_post_thumbnail_url(); ?>" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
                                                 <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -143,7 +180,7 @@ get_header();
                                         </div>
                                     </div>
                                     <div class="product_info">
-                                        <h6 class="product_title"><a href="shop-product-detail.html"><?php the_title();?></a></h6>
+                                        <h6 class="product_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h6>
                                         <div class="product_price">
                                             <?php 
                                                 if( $product->get_sale_price()){
@@ -342,6 +379,40 @@ get_header();
 </div>
 <!-- END SECTION SHOP -->
 
+
+
+<!-- START SECTION BANNER --> 
+<div class="section pb_20 small_pt">
+	<div class="container-fluid px-2">
+    	<div class="row no-gutters">
+        <?php 
+
+                $argsSpecial = array(
+                    'post_type' => 'special_cards',
+                    'posts_per_page' => 3,
+                    'post_status' => 'publish',
+                        'orderby' => 'date', 
+                        'order' => 'ASC'
+                );
+                $special = new WP_Query( $argsSpecial );
+                while($special->have_posts()){
+                    $special->the_post();
+                    ?>
+        	<div class="col-md-4">
+            	<div class="sale_banner">
+                	<a class="hover_effect1" href="<?php echo get_field('link'); ?>">
+                		<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="shop_banner_img3">
+                    </a>
+                </div>
+            </div>
+            <?php
+                }
+            ?>
+           
+        </div>
+    </div>
+</div>
+<!-- END SECTION BANNER --> 
 
 <div class='map'>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3188.819228574254!2d174.83208405119674!3d-36.942486779821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4ec716998401%3A0xf71db5dbf04c8aa9!2sLIQUOR%20HUT%20OTAHUHU!5e0!3m2!1sen!2snz!4v1607991829784!5m2!1sen!2snz" width="100" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>

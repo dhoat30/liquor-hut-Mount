@@ -6,8 +6,8 @@
 
 add_post_type_support( "sliders", "thumbnail" ); 
 
-add_post_type_support( "loving", "thumbnail" ); 
-add_post_type_support( "blogs", "thumbnail" );
+add_post_type_support( "special_cards", "thumbnail" ); 
+add_post_type_support( "product_categories", "thumbnail" );
 add_post_type_support( "shop-my-fav", "thumbnail" );
 add_post_type_support( "shop_by_brand", "thumbnail" );
 
@@ -30,17 +30,17 @@ function register_custom_type2(){
    ); 
 
    //loving post type
-   register_post_type("loving", array(
-      "supports" => array("title", "page-attributes", 'editor'), 
+   register_post_type("special_cards", array(
+      "supports" => array("title", "page-attributes"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,
       "labels" => array(
-         "name" => "Lovings", 
-         "add_new_item" => "Add New Loving", 
-         "edit_item" => "Edit Loving", 
-         "all_items" => "All Lovings", 
-         "singular_name" => "Loving"
+         "name" => "Special Cards", 
+         "add_new_item" => "Add New Special Card", 
+         "edit_item" => "Edit Special Card", 
+         "all_items" => "All Special Cards", 
+         "singular_name" => "Special Card"
       ), 
       "menu_icon" => "dashicons-welcome-widgets-menus",
       'taxonomies'          => array('category')
@@ -67,17 +67,17 @@ function register_custom_type2(){
    );
 
    //loving post type
-   register_post_type("shop-my-fav", array(
+   register_post_type("product_categories", array(
       "supports" => array("title", "page-attributes"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,
       "labels" => array(
-         "name" => "Shop My Favs", 
-         "add_new_item" => "Add New Shop My Fav", 
-         "edit_item" => "Edit Shop My Fav", 
-         "all_items" => "All Shop My Favs", 
-         "singular_name" => "Shop My Fav"
+         "name" => "Product Categories", 
+         "add_new_item" => "Add New Product Category", 
+         "edit_item" => "Edit Product Category", 
+         "all_items" => "All Product Categories", 
+         "singular_name" => "Product Category"
       ), 
       "menu_icon" => "dashicons-welcome-write-blog"
    )

@@ -98,7 +98,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="text-center text-md-right">
-                        <ul class="header_list">
+                        <ul class="header_list small-navbar">
+                            
                            <!-- <li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li> -->
                             <li><a href="<?php echo get_site_url(); ?>/wish-list"><i class="ti-heart"></i><span>Wishlist</span></a></li>
                             <?php 
@@ -122,15 +123,13 @@
     </div>
     <div class="bottom_header dark_skin main_menu_uppercase">
         <div class="container">
-            <nav class="navbar navbar-expand-lg"> 
+            <nav class="main-navbar-container"> 
                 <a class="navbar-brand" href="/">
                     <img class="logo_light" src="<?php echo get_site_url();?>/wp-content/uploads/2020/12/LH-logo-landscape-1.png" alt="logo" />
                     <img class="logo_dark" src="<?php echo get_site_url();?>/wp-content/uploads/2020/12/LH-logo-landscape-1.png" alt="logo" />
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
-                    <span class="ion-android-menu"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                
+                <div id="main-navbar">
                     <?php 
                             wp_nav_menu( array(
                               'theme_location' => 'Main-navbar'
@@ -142,12 +141,10 @@
                     <li><a href="javascript:void(0);" class="nav-link search_trigger"><i class="linearicons-magnifier"></i></a>
                         <div class="search_wrap">
                             <span class="close-search"><i class="ion-ios-close-empty"></i></span>
-                            <form>
-                                <input type="text" placeholder="Search" class="form-control" id="search_input">
-                                <button type="submit" class="search_icon"><i class="ion-ios-search-strong"></i></button>
-                            </form>
+                            <?php echo do_shortcode('[ivory-search id="560" title="Default Search Form"]'); ?>
                         </div><div class="search_overlay"></div>
                     </li>
+                    <!-- cart items 
                     <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i><span class="cart_count">2</span></a>
                         <div class="cart_box dropdown-menu dropdown-menu-right">
                             <ul class="cart_list">
@@ -168,6 +165,7 @@
                             </div>
                         </div>
                     </li>
+                            -->
                 </ul>
             </nav>
         </div>

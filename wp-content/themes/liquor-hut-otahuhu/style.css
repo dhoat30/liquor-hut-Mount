@@ -37,6 +37,9 @@
     color:#3F3F3F;
     font-family: 'Playfair Display', serif;
   }
+  a{
+      cursor: pointer;
+  }
   .white{ 
     color: white;
 }
@@ -45,6 +48,5 @@
 }
   
 .btn{
-    background: black;
-    padding: 5px 20px;
+    cursor: pointer;
 }

@@ -491,7 +491,7 @@ button:focus {
 	color: #FF324D !important;
 }
 .bg_default {
-	background-color: #FF324D !important;
+	background-color: rgb(228, 77, 38);
 }
 .bg_gray {
 	background-color: #f7f8fb !important;
