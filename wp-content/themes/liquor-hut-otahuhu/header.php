@@ -103,17 +103,19 @@
                         <ul class="header_list small-navbar">
                             
                            <!-- <li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li> -->
-                            <li><a href="<?php echo get_site_url(); ?>/wish-list"><i class="ti-heart"></i><span>Wishlist</span></a></li>
+                            <li><a href="<?php echo get_site_url(); ?>/wish-list"><i class="fal fa-heart"></i><span>Wishlist</span></a></li>
                             <?php 
                                 if(is_user_logged_in()){
                                     ?>
-                                        <li><a href="<?php echo get_site_url(); ?>/my-account"><i class="ti-user"></i><span>My Account</span></a></li>
+                                        <!--<li><a href="<?php //echo get_site_url(); ?>/my-account"><i class="fad fa-user"></i><span>My Account</span></a></li>
+                                -->
                                     <?php
                                 }
                                 else{
                                     ?>
-                                     <li><a href="<?php echo get_site_url(); ?>/my-account"><i class="ti-user"></i><span>Login</span></a></li>
-
+                                    <!--
+                                     <li><a href="<?php //echo get_site_url(); ?>/my-account"><i class="ti-user"></i><span>Login</span></a></li>
+                                -->
                                     <?php
                                 }
                             ?>
@@ -140,9 +142,9 @@
                  
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">
-                    <li><a href="javascript:void(0);" class="nav-link search_trigger"><i class="linearicons-magnifier"></i></a>
+                    <li><a href="javascript:void(0);" class="nav-link search_trigger"><i class="fal fa-search"></i></a>
                         <div class="search_wrap">
-                            <span class="close-search"><i class="ion-ios-close-empty"></i></span>
+                            <span class="close-search"><i class="fal fa-times"></i></span>
                             <?php echo do_shortcode('[ivory-search id="560" title="Default Search Form"]'); ?>
                         </div><div class="search_overlay"></div>
                     </li>

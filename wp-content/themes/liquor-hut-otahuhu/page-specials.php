@@ -72,40 +72,46 @@ get_header();
                                             <div class="product_img">
                                                 <a href="shop-product-detail.html">
                                                     <?php echo $product->get_image();?>                                        </a>
-                                                <div class="product_action_box">
-                                                    <ul class="list_none pr_action_btn">
-                                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                    </ul>
-                                                </div>
+                                                    <div class="product_action_box">
+                                            <ul class="list_none pr_action_btn">
+                                                <!--<li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>-->
+                                                <li> <div data-item_id="<?php the_ID();?>" data-action="alg-wc-wl-toggle" class="alg-wc-wl-btn add alg-wc-wl-thumb-btn alg-wc-wl-thumb-btn-abs alg-wc-wl-thumb-btn-loop" style="inset: 17px auto auto 17px; display: block;">
+                                                            <div class="alg-wc-wl-view-state alg-wc-wl-view-state-add">
+                                                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                                            </div>
+                                                            <div class="alg-wc-wl-view-state alg-wc-wl-view-state-remove">
+                                                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                                            </div>
+                                                               
+                                                     </div>
+                                                </li>
+                                                
+   
+                                            </ul>
+                                        </div>
                                             </div>
                                             <div class="product_info">
-                                                <h5 class="product_title"><a href="shop-product-detail.html">Blue Dress For Woman</a></h5>
-                                                <div class="product_price">
-                                                    <span class="price">$45.00</span>
-                                                    <del>$55.25</del>
-                                                    <div class="on_sale">
-                                                        <span><?php echo $cat;?></span>
-                                                    </div>
+                                                <h5 class="product_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
+                                                            <div class="product_price">
+                                                            <?php 
+                                                            if( $product->get_sale_price()){
+                                                                ?>
+                                                                <span class="price">$<?php echo $product->get_sale_price();?></span>
+                                                                    <del>$<?php echo $product->get_regular_price(); ?></del>
+                                                                    
+                                                                <?php
+                                                            }
+                                                            else{
+                                                                ?>
+                                                                    <span class="price">$<?php echo $product->get_regular_price();?></span>
+
+                                                                <?php
+                                                            }
+                                                        ?>
                                                 </div>
-                                                <div class="rating_wrap">
-                                                    <div class="rating">
-                                                        <div class="product_rate" style="width:80%"></div>
-                                                    </div>
-                                                    <span class="rating_num">(21)</span>
-                                                </div>
-                                                <div class="pr_desc">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                                </div>
-                                                <div class="pr_switch_wrap">
-                                                    <div class="product_color_switch">
-                                                        <span class="active" data-color="#87554B"></span>
-                                                        <span data-color="#333333"></span>
-                                                        <span data-color="#DA323F"></span>
-                                                    </div>
-                                                </div>
+                                               
+                                               
                                             </div>
                                         </div>
                                    

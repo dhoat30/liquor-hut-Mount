@@ -9,19 +9,19 @@
 @import 'css/home-page.css';
 @import 'css/slider.css';
 
-@import 'css/all.min.css';
+
 @import 'css/animate.css';
-@import 'css/flaticon.css';
-@import 'css/ionicons.min.css';
+/*@import 'css/flaticon.css';*/
+/*@import 'css/ionicons.min.css';*/
 @import 'css/jquery-ui.css';
-@import 'css/linearicons.css';
+/*@import 'css/linearicons.css';*/
 @import 'css/magnific-popup.css';
 @import 'css/responsive.css';
 @import 'css/simple-line-icons.css';
 @import 'css/slick-theme.css';
 @import 'css/slick.css';
 @import 'css/style.css';
-@import 'css/themify-icons.css';
+/*@import 'css/themify-icons.css';*/
 
 @import 'assets/bootstrap/css/bootstrap.min.css';
 
@@ -78,12 +78,15 @@
     font-weight: 400 !important;
     letter-spacing: 0.07em !important;
     font-size: 18px !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 .product_price{
     color: rgb(33, 33, 33) !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 .product_price .price{
     color:rgb(228, 77, 38) !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 /*mailchimp */

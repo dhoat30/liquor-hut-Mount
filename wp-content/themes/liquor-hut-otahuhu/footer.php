@@ -29,8 +29,8 @@
                     </div>
                     <div class="widget">
                         <ul class="social_icons social_white">
-                            <li><a href="<?php echo get_field('facebook');?>" target="_blank"><i class="ion-social-facebook"></i></a></li>
-                            <li><a href="<?php echo get_field('instagram_');?>" target="_blank"><i class="ion-social-instagram-outline"></i></a></li>
+                            <li><a href="<?php echo get_field('facebook');?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="<?php echo get_field('instagram_');?>" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
                         </ul>
                     </div>
         		</div>
@@ -76,15 +76,15 @@
                         <h6 class="widget_title">Contact Info</h6>
                         <ul class="contact_info contact_info_light">
                             <li>
-                                <i class="ti-location-pin"></i>
+                            <i class="fas fa-map-marked-alt"></i>
                                 <p><?php echo get_field('physical_address');?></p>
                             </li>
                             <li>
-                                <i class="ti-email"></i>
+                            <i class="fas fa-envelope"></i>
                                 <a href="mailto:<?php echo get_field('email_');?>"><?php echo get_field('email_');?></a>
                             </li>
                             <li>
-                                <i class="ti-mobile"></i>
+                            <i class="fas fa-mobile-alt"></i>
                                 <a href="tel:<?php echo get_field('phone_number');?>"><?php echo get_field('phone_number');?></a>
                             </li>
                         </ul>
@@ -164,7 +164,11 @@
   <script src="<?php echo get_theme_file_uri('/assets/js/jquery.elevatezoom.js'); ?>"></script>
   <!-- scripts js --> 
   <script src="<?php echo get_theme_file_uri('/assets/js/scripts.js'); ?>"></script>
- 
+  <!--font awesome-->
+  <script src="https://kit.fontawesome.com/f904bca56c.js" crossorigin="anonymous"></script>
+    <!-- IONIC _-->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
   <!-- isotope code--> 
   <script>
         var $grid = $("#grid").isotope({
