@@ -41,7 +41,7 @@ get_header();
                                                         <!--<h2 class="staggered-animation" data-animation="slideInLeft" data-animation-delay="0.5s"><?php //echo get_field('title');?></h2>
                                                         <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light" data-animation="slideInLeft" data-animation-delay="1s"><?php //echo get_field('subtitle');?></h5>
                                                         -->
-                                                        <a data-animation-delay="1.5s" class='btn btn-black black' href="<?php echo get_field('button_link');?>" data-animation="slideInLeft" data-animation-delay="1.5s"><?php echo get_field('button_text');?></a>
+                                                        <a data-animation-delay="1.5s" class='btn btn-black black btn-hover' href="<?php echo get_field('button_link');?>" data-animation="slideInLeft" data-animation-delay="1.5s"><?php echo get_field('button_text');?></a>
                                                     </div>
                                                 </div>
                                                 
@@ -67,7 +67,7 @@ get_header();
             </div>
 </div>
 
-  
+
 <!-- START SECTION BANNER --> 
 <div class="section pb_20 small_pt">
 	<div class="container">
@@ -172,10 +172,20 @@ get_header();
                                         
                                         <div class="product_action_box">
                                             <ul class="list_none pr_action_btn">
-                                                <li class="add-to-cart"><a href="<?php the_permalink();?>"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                                <li><a href="<?php echo get_the_post_thumbnail_url(); ?>" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                                <li><a href="#"><i class="icon-heart"></i></a></li>
+                                                <!--<li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>-->
+                                                <li> <div data-item_id="<?php the_ID();?>" data-action="alg-wc-wl-toggle" class="alg-wc-wl-btn add alg-wc-wl-thumb-btn alg-wc-wl-thumb-btn-abs alg-wc-wl-thumb-btn-loop" style="inset: 17px auto auto 17px; display: block;">
+                                                            <div class="alg-wc-wl-view-state alg-wc-wl-view-state-add">
+                                                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                                            </div>
+                                                            <div class="alg-wc-wl-view-state alg-wc-wl-view-state-remove">
+                                                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                                            </div>
+                                                               
+                                                     </div>
+                                                </li>
+                                                
+   
                                             </ul>
                                         </div>
                                     </div>
@@ -205,9 +215,6 @@ get_header();
                                 </div>
                             </div>
                                 <?php 
-
-                            
-
                                 endwhile;
                                    
                             } else {
@@ -249,10 +256,20 @@ get_header();
                                         </a>
                                         <div class="product_action_box">
                                             <ul class="list_none pr_action_btn">
-                                                <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                                <li><a href="#"><i class="icon-heart"></i></a></li>
+                                                <!--<li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>-->
+                                                <li> <div data-item_id="<?php the_ID();?>" data-action="alg-wc-wl-toggle" class="alg-wc-wl-btn add alg-wc-wl-thumb-btn alg-wc-wl-thumb-btn-abs alg-wc-wl-thumb-btn-loop" style="inset: 17px auto auto 17px; display: block;">
+                                                            <div class="alg-wc-wl-view-state alg-wc-wl-view-state-add">
+                                                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                                            </div>
+                                                            <div class="alg-wc-wl-view-state alg-wc-wl-view-state-remove">
+                                                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                                            </div>
+                                                               
+                                                     </div>
+                                                </li>
+                                                
+   
                                             </ul>
                                         </div>
                                     </div>
@@ -304,7 +321,7 @@ get_header();
                                 'tax_query' => array( array(
                                     'taxonomy' => 'product_tag',
                                     'field' => 'slug',
-                                    'terms' => 'best-sellers'
+                                    'terms' => 'featured'
                                 )
                                 )
                                 );
@@ -326,10 +343,20 @@ get_header();
                                         </a>
                                         <div class="product_action_box">
                                             <ul class="list_none pr_action_btn">
-                                                <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                                <li><a href="#"><i class="icon-heart"></i></a></li>
+                                                <!--<li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>-->
+                                                <li> <div data-item_id="<?php the_ID();?>" data-action="alg-wc-wl-toggle" class="alg-wc-wl-btn add alg-wc-wl-thumb-btn alg-wc-wl-thumb-btn-abs alg-wc-wl-thumb-btn-loop" style="inset: 17px auto auto 17px; display: block;">
+                                                            <div class="alg-wc-wl-view-state alg-wc-wl-view-state-add">
+                                                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                                            </div>
+                                                            <div class="alg-wc-wl-view-state alg-wc-wl-view-state-remove">
+                                                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                                            </div>
+                                                               
+                                                     </div>
+                                                </li>
+                                                
+   
                                             </ul>
                                         </div>
                                     </div>

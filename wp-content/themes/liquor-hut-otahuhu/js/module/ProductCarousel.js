@@ -18,20 +18,28 @@ class ProductCarousel{
         if(clickID == 'special-tab'){
             $('.tab-pane').removeClass('active');
             $('.tab-pane').removeClass('show');
+            $('.tab-pane').css('display', 'none');
+
             $('#special').addClass('active show'); 
+            $('#special').css('display', 'block'); 
              
         }
         if(clickID == 'sellers-tab'){
             $('.tab-pane').removeClass('active');
             $('.tab-pane').removeClass('show');
+            $('.tab-pane').css('display', 'none');
 
             $('#sellers').addClass('active show'); 
+            $('#sellers').css('display', 'block');
           
         }
         else if(clickID == 'featured-tab'){
             $('.tab-pane').removeClass('active');
              $('.tab-pane').removeClass('show');
+             $('.tab-pane').css('display', 'none');
+
             $('#featured').addClass('active show'); 
+            $('#featured').css('display', 'block'); 
         }
      
         

@@ -1,24 +1,7 @@
 
-<!-- START SECTION SUBSCRIBE NEWSLETTER -->
-<div class="section bg_default small_pt small_pb">
-	<div class="container">	
-    	<div class="row align-items-center">	
-            <div class="col-md-6">
-                <div class="heading_s1 mb-md-0 heading_light">
-                    <h3>Subscribe Our Newsletter</h3>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="newsletter_form">
-                    <form>
-                        <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address">
-                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php
+    echo do_shortcode('[mc4wp_form id="595"]');
+?>
 <!-- START FOOTER -->
 <footer class="footer_dark">
 	<div class="footer_top">
@@ -89,7 +72,7 @@
                             </li>
                             <li>
                                 <i class="ti-mobile"></i>
-                                <p>09 259 4943</p>
+                                <a href='tel:09 259 4943'>09 259 4943</a>
                             </li>
                         </ul>
                     </div>
@@ -101,7 +84,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-md-0 text-center text-md-left">© 2020 All Rights Reserved by Liquor Hut Limited</p>
+                    <p class="mb-md-0 text-center text-md-left">© 2020 All Rights Reserved by Liquor Hut Limited | Built By <a hred="https://webduel.co.nz">Web<span>DUEL</span></a></p>
                 </div>
                 <div class="col-md-6">
                     <ul class="footer_payment text-center text-lg-right">
@@ -159,12 +142,25 @@
   <!-- jquery.dd.min js -->
   <script src="<?php echo get_theme_file_uri('/assets/js/jquery.dd.min.js'); ?>"></script>
   <!-- slick js -->
-  <script src="<?php echo get_theme_file_uri('/assets/js/slick.min.js'); ?>"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- elevatezoom js -->
   <script src="<?php echo get_theme_file_uri('/assets/js/jquery.elevatezoom.js'); ?>"></script>
   <!-- scripts js --> 
   <script src="<?php echo get_theme_file_uri('/assets/js/scripts.js'); ?>"></script>
+ 
+  <!-- isotope code--> 
+  <script>
+        var $grid = $("#grid").isotope({
+        itemSelector: "h6",
+        layoutMode: "fitRows"
+    });
+    
+    $("#filters").on("click", "a", function() {
+        var filterValue = $(this).attr("data-filter");
+        // use filterFn if matches value
+        $grid.isotope({ filter: filterValue });
+    });
+  </script>
 
-  
 </body>
 </html>

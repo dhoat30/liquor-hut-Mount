@@ -37,6 +37,9 @@
     color:#3F3F3F;
     font-family: 'Playfair Display', serif;
   }
+  .center-align{
+      text-align: center !important;
+  }
   a{
       cursor: pointer;
   }
@@ -49,4 +52,74 @@
   
 .btn{
     cursor: pointer;
+}
+.btn-hover:hover{
+    background-color:rgb(228, 77, 38) !important;
+}
+/* a tag */
+.single_banner_info a{ 
+    color: rgb(228, 77, 38);
+}
+.single_bn_link::before {
+    background-color: rgba(255,50,77,0) !important;
+}
+
+.ex-product-nav .nav-link {
+    color: rgb(228, 77, 38);
+    font-weight: 400 !important;
+    font-size: 16px !important;
+}
+.tab-style1 .nav-tabs li.nav-item a.active, .tab-style1 .nav-tabs li.nav-item a.active:hover, .tab-style2 .nav-tabs li.nav-item a.active, .tab-style2 .nav-tabs li.nav-item a.active:hover {
+    color: black !important;
+}
+
+.product_title a{ 
+    color: black !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.07em !important;
+    font-size: 18px !important;
+}
+.product_price{
+    color: rgb(33, 33, 33) !important;
+}
+.product_price .price{
+    color:rgb(228, 77, 38) !important;
+}
+
+/*mailchimp */
+.form-control{
+    height: 38px !important;
+}
+
+/*footer*/ 
+
+.social_icons i{
+    color: white !important;
+    font-size: 25px !important;
+}
+.social_icons i:hover{
+      color:rgb(228, 77, 38) !important;
+ 
+    font-size: 25px !important;
+}
+.contact_info p{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.03em;
+}
+.bottom_footer p{ 
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.03em;
+}
+
+.bottom_footer p span{ 
+    font-family: 'Roboto', sans-serif;
+    color: rgba(252,186,27,1.00);
+    font-weight: 600;
+}
+
+/*search */
+.search_wrap {
+    
+    width: 80%;
+   
 }
