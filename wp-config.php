@@ -19,17 +19,21 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define( 'DB_NAME', 'liquor_hut_otahuhu' );
 
-/** MySQL database username */
-define( 'DB_USER', 'root' );
+// ** MySQL settings - You can get this info from your web host ** //
+if(strstr($_SERVER['SERVER_NAME'], 'localhost')){
+	define( 'DB_NAME', 'liquor_hut_otahuhu' );
+	define( 'DB_USER', 'root' );
+	define( 'DB_PASSWORD', 'root' );
+	define( 'DB_HOST', '127.0.0.1' );
+}
+else{ 
+	define( 'DB_NAME', 'dbdbvc4hdrpdp5');
+	define( 'DB_USER', 'ugpyjfbav3dpvm');
+	define( 'DB_PASSWORD', '(3(4jbol}1c6');
+	define( 'DB_HOST', '127.0.0.1' );
+}
 
-/** MySQL database password */
-define( 'DB_PASSWORD', 'root' );
-
-/** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
