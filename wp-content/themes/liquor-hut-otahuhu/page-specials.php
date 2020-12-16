@@ -92,7 +92,7 @@ get_header();
                                         </div>
                                             </div>
                                             <div class="product_info">
-                                                <h5 class="product_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
+                                                <h5 class="product_title"><a href="#"><?php the_title();?></a></h5>
                                                             <div class="product_price">
                                                             <?php 
                                                             if( $product->get_sale_price()){
