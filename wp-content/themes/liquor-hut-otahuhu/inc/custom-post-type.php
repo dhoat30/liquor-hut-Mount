@@ -84,19 +84,20 @@ function register_custom_type2(){
    );
    
    //shop by brand page post type
-   register_post_type("shop_by_brand", array(
+   register_post_type("contact_details", array(
       "supports" => array("title", "page-attributes"), 
       "public" => true, 
       "show_ui" => true, 
       "hierarchical" => true,
       "labels" => array(
-         "name" => "Brands", 
-         "add_new_item" => "Add New Brand", 
-         "edit_item" => "Edit Brand", 
-         "all_items" => "All Brands", 
-         "singular_name" => "Brand"
+         "name" => "Contact Details", 
+         "add_new_item" => "Add New Contact Detail", 
+         "edit_item" => "Edit Contact Detail", 
+         "all_items" => "All Contact Details", 
+         "singular_name" => "Contact Detail"
       ), 
-      "menu_icon" => "dashicons-shield"
+      "menu_icon" => "dashicons-location
+      "
    )
    );
    

@@ -3,6 +3,19 @@
     echo do_shortcode('[mc4wp_form id="595"]');
 ?>
 <!-- START FOOTER -->
+<?php 
+
+                $argsContact = array(
+                    'post_type' => 'contact_details',
+                    'posts_per_page' => 1,
+                    'post_status' => 'publish',
+                        'orderby' => 'date', 
+                        'order' => 'ASC'
+                );
+                $contact = new WP_Query( $argsContact );
+                while($contact->have_posts()){
+                    $contact->the_post();
+                    ?>
 <footer class="footer_dark">
 	<div class="footer_top">
         <div class="container">
@@ -16,8 +29,8 @@
                     </div>
                     <div class="widget">
                         <ul class="social_icons social_white">
-                            <li><a href="https://www.facebook.com/liquorhutotahuhu/"><i class="ion-social-facebook"></i></a></li>
-                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            <li><a href="<?php echo get_field('facebook');?>" target="_blank"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="<?php echo get_field('instagram_');?>" target="_blank"><i class="ion-social-instagram-outline"></i></a></li>
                         </ul>
                     </div>
         		</div>
@@ -58,21 +71,21 @@
                     </div>
                 </div>
                             -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-3 col-md-4 col-sm-6" id="contact">
                 	<div class="widget">
                         <h6 class="widget_title">Contact Info</h6>
                         <ul class="contact_info contact_info_light">
                             <li>
                                 <i class="ti-location-pin"></i>
-                                <p>26A Saleyards Road, Otahuhu, Auckland 1062</p>
+                                <p><?php echo get_field('physical_address');?></p>
                             </li>
                             <li>
                                 <i class="ti-email"></i>
-                                <a href="mailto:otahuhu@liquorhut.co.nz">otahuhu@liquorhut.co.nz</a>
+                                <a href="mailto:<?php echo get_field('email_');?>"><?php echo get_field('email_');?></a>
                             </li>
                             <li>
                                 <i class="ti-mobile"></i>
-                                <a href='tel:09 259 4943'>09 259 4943</a>
+                                <a href="tel:<?php echo get_field('phone_number');?>"><?php echo get_field('phone_number');?></a>
                             </li>
                         </ul>
                     </div>
@@ -100,7 +113,11 @@
     </div>
 </footer>
 
-
+<?php 
+                }
+                wp_reset_postdata();
+       
+?>
 <?php wp_footer();?>
 <!--
 <script>

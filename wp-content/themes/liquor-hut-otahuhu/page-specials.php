@@ -1,37 +1,45 @@
 <?php 
 get_header();
 ?>
-                <div class="row justify-content-center row-container">
-                            <div class="col-md-6">
-                                <div class="heading_s1 text-center">
-                                    <h2>Specials</h2>
-                                </div>
-                            </div>
+<div class="section small_pt pb_70">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+            	<div class="heading_s1 text-center">
+                	<h2>Exclusive Products</h2>
                 </div>
-                <div class="tab-style1 special-page-nav" id="filters">
-                    <ul class="nav nav-tabs justify-content-center" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="arrival-tab" data-toggle="tab" href="#arrival" role="tab" aria-controls="arrival" aria-selected="true" data-filter="*">ALL</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="sellers-tab" data-toggle="tab" href="#sellers" role="tab" aria-controls="sellers" aria-selected="false" data-filter=".beer">Beer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="featured-tab" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="false" data-filter=".wine">Wine</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="special-tab" data-toggle="tab" href="#special" role="tab" aria-controls="special" aria-selected="false" data-filter=".spirits">Spirit</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="special-tab" data-toggle="tab" href="#special" role="tab" aria-controls="special" aria-selected="false" data-filter=".rtds">RTD's</a>
-                        </li>
-                    </ul>
+            </div>
+		</div>
+        <div class="row">
+        	<div class="col-12">
+            	<div class="tab-style1">
+                    <ul class="nav nav-tabs justify-content-center special-page-nav" id="filters" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="arrival-tab" data-toggle="tab" href="#arrival" role="tab" aria-controls="arrival" aria-selected="true" data-filter="*">ALL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="sellers-tab" data-toggle="tab" href="#sellers" role="tab" aria-controls="sellers" aria-selected="false" data-filter=".beer">Beer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="featured-tab" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="false" data-filter=".wine">Wine</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="special-tab" data-toggle="tab" href="#special" role="tab" aria-controls="special" aria-selected="false" data-filter=".spirits">Spirit</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="special-tab" data-toggle="tab" href="#special" role="tab" aria-controls="special" aria-selected="false" data-filter=".rtds">RTD's</a>
+                            </li>
+                        </ul>
                 </div>
+                <div class="tab-content">
+                	<div class="tab-pane fade show active" id="arrival" role="tabpanel" aria-labelledby="arrival-tab">
+                        <div class="row shop_container special-page-product" id="grid">
+                
+               
 
-<div class='special-page-product' id="grid">
 
 
-                    <?php
+                            <?php
                             $args = array(
                                 'post_type' => 'product',
                                 'posts_per_page' => -1,
@@ -58,8 +66,8 @@ get_header();
                                 
 
                                 ?>
-                                <h6  class="<?php echo $cat;?>">
-                                    <div class="">
+                                <h6  class="col-lg-3 col-md-4 col-6 <?php echo $cat;?>">
+                                    
                                         <div class="product">
                                             <div class="product_img">
                                                 <a href="shop-product-detail.html">
@@ -100,9 +108,10 @@ get_header();
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    </a>
+                                   
+                                    
                                 </h6>
+
                                 <?php 
                                 endwhile;
                                    
@@ -111,13 +120,17 @@ get_header();
                             }
                             wp_reset_postdata();
                             ?>
-                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
                                
                         
    
 
  
-</div>
 
 
 

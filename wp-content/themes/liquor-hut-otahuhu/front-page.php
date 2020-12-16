@@ -440,13 +440,28 @@ get_header();
     </div>
 </div>
 <!-- END SECTION BANNER --> 
+<?php 
 
+                $argsContact = array(
+                    'post_type' => 'contact_details',
+                    'posts_per_page' => 1,
+                    'post_status' => 'publish',
+                        'orderby' => 'date', 
+                        'order' => 'ASC'
+                );
+                $contact = new WP_Query( $argsContact );
+                while($contact->have_posts()){
+                    $contact->the_post();
+                    ?>
 <div class='map'>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3188.819228574254!2d174.83208405119674!3d-36.942486779821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4ec716998401%3A0xf71db5dbf04c8aa9!2sLIQUOR%20HUT%20OTAHUHU!5e0!3m2!1sen!2snz!4v1607991829784!5m2!1sen!2snz" width="100" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<iframe src="<?php echo get_field('map_url');?>" width="100" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </div>
             
 
-
+<?php 
+                }
+                            wp_reset_postdata();
+	                        ?>
 
 <script>
         const slides = document.querySelectorAll('.slide');
