@@ -6,7 +6,7 @@ get_header();
 		<div class="row justify-content-center">
 			<div class="col-md-6">
             	<div class="heading_s1 text-center">
-                	<h2>Exclusive Products</h2>
+                	<h2>Specials</h2>
                 </div>
             </div>
 		</div>
