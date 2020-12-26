@@ -112,23 +112,23 @@
         </div>
     </div>
 </footer>
-
+<div class="overlay">
+    <div class="change-store-popup">
+        <h3>Are you sure you want to change your local store?</h3>
+        <p>This will restart your session and clear the cart.</p>
+        <div class="button-container">
+            <button class="btn btn-orange-border cancel-btn">Cancel</button>
+            <a class="btn btn-orange white" href="https://liquorhut.co.nz">Change My Store</a>
+        </div>
+    </div>
+</div>
 <?php 
                 }
                 wp_reset_postdata();
        
 ?>
 <?php wp_footer();?>
-<!--
-<script>
-  document.write(
-    '<script src="http://' +
-      (location.host || '${1:localhost}').split(':')[0] +
-      ':${2:35729}/livereload.js?snipver=1"></' +
-      'script>'
-  );
-</script>
---> 
+
 
   <!-- Latest jQuery --> 
   <script
