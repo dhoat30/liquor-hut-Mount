@@ -101,7 +101,26 @@
                 <div class="col-md-6">
                     <div class="text-center text-md-right">
                         <ul class="header_list small-navbar">
+                        <?php 
+
+                                                $argsLocation = array(
+                                                    'post_type' => 'contact_details',
+                                                    'posts_per_page' => 1,
+                                                    'post_status' => 'publish',
+                                                    
+                                                );
+                                                $contact = new WP_Query( $argsLocation );
+                                                while($contact->have_posts()){
+                                                    $contact->the_post();
+                                                    ?>
+                                           
                             
+                           <!-- <li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li> -->
+                           <li><a href="#" class="change-store-btn"><i class="fal fa-map-marker-alt"></i><span><?php echo get_field('location_'); ?></span></a></li>
+                            <?php 
+                                                }
+                                                wp_reset_postdata();
+                            ?>    
                            <!-- <li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li> -->
                             <li><a href="<?php echo get_site_url(); ?>/wish-list"><i class="fal fa-heart"></i><span>Wishlist</span></a></li>
                             <?php 
