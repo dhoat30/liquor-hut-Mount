@@ -120,8 +120,9 @@
                             <?php 
                                                 }
                                                 wp_reset_postdata();
-                            ?>
 
+                            ?>    
+                           <!-- <li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li> -->
                             <li><a href="<?php echo get_site_url(); ?>/wish-list"><i class="fal fa-heart"></i><span>Wishlist</span></a></li>
                             <?php 
                                 if(is_user_logged_in()){

@@ -199,3 +199,7 @@ a {
     text-align: center;
     padding: 30px 20px;
 }
+
+.owl-nav i {
+    font-size: 40px;
+}

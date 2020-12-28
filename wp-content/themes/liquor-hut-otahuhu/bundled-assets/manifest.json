@@ -1,4 +1,10 @@
 {
+<<<<<<< HEAD
   "scripts.css": "styles.c46db72082baff8debb2.css",
   "scripts.js": "scripts.c46db72082baff8debb2.js"
+=======
+  "scripts.css": "styles.1f2f1ac8f253ef77041b.css",
+  "scripts.js": "scripts.1f2f1ac8f253ef77041b.js",
+  "vendors~scripts.js": "vendors~scripts.083d62c26af3e00d6d36.js"
+>>>>>>> new-branch
 }
